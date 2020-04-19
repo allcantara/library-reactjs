@@ -1,13 +1,18 @@
 {
-  "name": "library-react",
+  "name": "allcantara-ui-kit",
   "version": "1.0.0",
-  "description": "",
+  "author": "Bruno Alcântara",
+  "description": "Componentes criados para agilizar o processo de desenvolvimento.",
   "main": "dist/index.js",
   "scripts": {
-    "storybook": "start-storybook -p 8081"
+    "storybook": "start-storybook -p 8081",
+    "build": "tsc -p ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "library",
+    "reactjs",
+    "javascript"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-centered": "^5.3.18",
