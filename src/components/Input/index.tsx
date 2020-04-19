@@ -1,61 +1,21 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { IconType } from 'react-icons/lib'
 
 import { Container, InputComponent } from './style'
 
-export interface Props {
-  placeholder?: string;
+export interface Props extends React.InputHTMLAttributes<any> {
   backgroundColor?: string;
   color?: string;
   placeholderColor?: string;
   icon?: IconType;
-  type?: string;
-  maxLength?: number;
-  minLength?: number;
-  id?: string;
-  name?: string;
-  readonly?: boolean;
-  disabled?: boolean;
-  size?: number;
-  max?: number;
-  min?: number;
 }
 
-export const Input: React.FC<Props> = ({
-  placeholder = "Digite aqui...",
-  placeholderColor = "#999",
-  backgroundColor = "#212121",
-  color = "#fff",
-  icon: Icon,
-  type = "text",
-  maxLength,
-  minLength,
-  id,
-  name,
-  readonly,
-  disabled,
-  size,
-  max,
-  min,
-}) => {
+export const Input: React.FC<PropsWithChildren<Props>> = (props: PropsWithChildren<Props>) => {
+  const {icon: Icon} = props
   return (
-    <Container disabled={disabled} backgroundColor={backgroundColor} placeholderColor={placeholderColor}>
-      {Icon && <Icon size={18} style={{marginRight: 5}} color={placeholderColor} />}
-      <InputComponent
-        type={type}
-        id={id}
-        placeholder={placeholder}
-        placeholderColor={placeholderColor}
-        color={color}
-        maxLength={maxLength}
-        minLength={minLength}
-        name={name}
-        readonly={readonly}
-        disabled={disabled}
-        size={size}
-        max={max}
-        min={min}
-      />
+    <Container {...props}>
+      {Icon && <Icon size={18} style={{marginRight: 5}} color={props.placeholderColor} />}
+      <InputComponent {...props} />
     </Container>
   )
 }
