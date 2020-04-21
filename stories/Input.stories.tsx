@@ -8,11 +8,8 @@ storiesOf('Input', module).add('Default', () => {
 
   return (
     <Input
-      placeholder="Informe seu nome"
+      placeholder="Informe seu e-mail..."
       icon={FiMail}
-      placeholderColor="#999"
-      backgroundColor="#333"
-      color="#999"
     />
   )
 })

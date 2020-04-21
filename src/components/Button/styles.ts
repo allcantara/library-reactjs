@@ -5,27 +5,29 @@ import { Props } from './index'
 export const Container = styled.button`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-  background-color: ${(props: Props) => props.backgroundColor};
-  color: ${(props: Props) => props.color};
-  border-color: ${(props: Props) => props.backgroundColor};
-  width: ${(props: Props) => props.width + 'px'};
-  height: ${(props: Props) => props.height + 'px'};
-  text-transform: ${(props: Props) => props.uppercase && 'uppercase'};
+  background-color: ${({ backgroundColor }: Props) => backgroundColor};
+  color: ${({ color }: Props) => color || '#fff'};
+  border-color: ${({ backgroundColor }: Props) => backgroundColor};
+  width: ${({ width }: Props) => width + 'px'};
+  height: ${({ height }: Props) => height + 'px'};
+  font-size: ${({ fontSize }: Props) => fontSize + 'px'};
+  text-transform: ${({ uppercase }: Props) => uppercase && 'uppercase'};
   font-weight: 500;
-  font-size: ${(props: Props) => props.fontSize ? props.fontSize + 'px' : '16px'};
+  border-style: solid;
   font-family: 'Roboto', sans-serif;
   border-radius: 4px;
   border-width: 1px;
   cursor: pointer;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 
+    0px 2px 2px 0px rgba(0,0,0,0.14), 
+    0px 1px 5px 0px rgba(0,0,0,0.12);
 
   &:hover {
     filter: brightness(90%);
-    margin-top: -2px;
   }
 
   &:active {
     filter: brightness(100%);
-    margin-top: 0;
   }
 
   &:disabled {
@@ -33,22 +35,21 @@ export const Container = styled.button`
     color: ${(props: Props) => props.color};
     filter: brightness(80%);
     cursor: not-allowed;
-    margin-top: 0;
   }
 `;
 
 export const ContainerOutline = styled.button`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-  color: ${(props: Props) => props.backgroundColor};
-  border-color: ${(props: Props) => props.backgroundColor};
+  color: ${({ backgroundColor }: Props) => backgroundColor};
+  border-color: ${({ backgroundColor }: Props) => backgroundColor};
   
   background-color: transparent;
-  width: ${(props: Props) => props.width + 'px'};
-  height: ${(props: Props) => props.height + 'px'};
-  text-transform: ${(props: Props) => props.uppercase && 'uppercase'};
+  width: ${({ width }: Props) => width + 'px'};
+  height: ${({ height }: Props) => height + 'px'};
+  text-transform: ${({ uppercase }: Props) => uppercase && 'uppercase'};
   font-weight: 500;
-  font-size: ${(props: Props) => props.fontSize ? props.fontSize + 'px' : '16px'};
+  font-size: ${({ fontSize }: Props) => fontSize + 'px'};
   font-family: 'Roboto', sans-serif;
   border-radius: 4px;
   border-width: 1px;
@@ -56,23 +57,20 @@ export const ContainerOutline = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props: Props) => props.backgroundColor};
-    color: ${(props: Props) => props.color};
-    margin-top: -2px;
+    background-color: ${({ backgroundColor }: Props) => backgroundColor};
+    color: ${({ color }: Props) => color};
   }
 
   &:active {
     filter: brightness(90%);
-    margin-top: 0;
   }
 
   &:disabled {
     background-color: transparent;
-    color: ${(props: Props) => props.backgroundColor};
-    border-color: ${(props: Props) => props.backgroundColor};
+    color: ${({ backgroundColor }: Props) => backgroundColor};
+    border-color: ${({ backgroundColor }: Props) => backgroundColor};
     filter: brightness(80%);
     cursor: not-allowed;
-    margin-top: 0;
   }
 
 `;

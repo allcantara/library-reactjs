@@ -3,4 +3,4 @@ import { storiesOf } from '@storybook/react'
 
 import { Separator } from '../src'
 
-storiesOf('Separator', module).add('Default', () => <Separator backgroundColor="transparent" color="#666" />)
+storiesOf('Separator', module).add('Default', () => <Separator  />)
