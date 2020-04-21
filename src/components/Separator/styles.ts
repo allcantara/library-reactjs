@@ -4,9 +4,7 @@ import { Props } from './index'
 
 export const Div = styled.div`
   background-color: ${({backgroundColor}: Props) => backgroundColor || '#fad15c'};
-
-  width: 100vw;
-  height: 20px;
+  max-width: 100vw;
   padding: 30px 40px;
 `;
 

@@ -36,6 +36,11 @@ export const Container = styled.button`
     filter: brightness(80%);
     cursor: not-allowed;
   }
+
+  &:focus {
+    /* Ficar com efeito de selecionado após click */
+    outline: none;
+  }
 `;
 
 export const ContainerOutline = styled.button`

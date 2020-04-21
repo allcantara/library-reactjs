@@ -14,7 +14,7 @@ export interface Props extends React.InputHTMLAttributes<any> {
 
 const initialState: Props = {
   backgroundColor: 'rgb(25, 24, 31)',
-  color: '#212121',
+  color: '#fff',
   placeholderColor: '#999',
   borderColor: 'rgb(40, 39, 44)',
   focusColor: '#fad15c',

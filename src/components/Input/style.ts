@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { Props } from './index'
 
 export const Container = styled.div`
-  width: ${({ width }: Props) => width ? width + 'px' : '100%'};
+  max-width: 100%;
+  width: ${({ width }: Props) => width + 'px'};
   height:  ${({ height }: Props) => height + 'px'};
   background-color: ${({ backgroundColor }: Props) => backgroundColor};
   border-color: ${({ borderColor }: Props) => borderColor};
@@ -29,7 +30,8 @@ export const Container = styled.div`
 
 export const InputComponent = styled.input`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-  width: ${({ width }: Props) => width ? width + 'px': "100%"};
+  width: 100%;
+  height:  ${({ height }: Props) => height + 'px'};
   color: ${({ color }: Props) => color || '#fff'};
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -43,5 +45,9 @@ export const InputComponent = styled.input`
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  &:focus {
+    outline-offset: none;
   }
 `;
