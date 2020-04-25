@@ -18,6 +18,7 @@ export const Container = styled.button`
   border-radius: 4px;
   border-width: 1px;
   cursor: pointer;
+  margin: 5px;
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 
     0px 2px 2px 0px rgba(0,0,0,0.14), 
     0px 1px 5px 0px rgba(0,0,0,0.12);
@@ -59,6 +60,7 @@ export const ContainerOutline = styled.button`
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
+  margin: 5px;
   cursor: pointer;
 
   &:hover {
@@ -76,6 +78,11 @@ export const ContainerOutline = styled.button`
     border-color: ${({ backgroundColor }: Props) => backgroundColor};
     filter: brightness(80%);
     cursor: not-allowed;
+  }
+
+  &:focus {
+    /* Ficar com efeito de selecionado após click */
+    outline: none;
   }
 
 `;

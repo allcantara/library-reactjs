@@ -1,6 +1,6 @@
 {
   "name": "allcantara-ui-kit",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "author": "Bruno Alcântara",
   "description": "Componentes criados para agilizar o processo de desenvolvimento.",
   "main": "dist/index.js",
